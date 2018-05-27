@@ -32,6 +32,10 @@ n = Larimar.size
 # raise an exception if the key is invalid
 Larimar.get("your.property")
 
+# get a loaded property
+# return default value if requested does not exist
+Larimar.get("your.fake.property", "your default value")
+
 # assert existence of a key
 Larimar.exists("your.property")
 
