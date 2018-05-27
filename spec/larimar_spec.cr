@@ -11,6 +11,11 @@ describe Larimar do
     Larimar.get("qwerty.mayonnaise").should eq "cornichon"
   end
 
+  it "should fetch data in memory or if not exist default value" do
+    Larimar.get("test").should eq "hello"
+    Larimar.get("blahblah","abcde").should eq "abcde"
+  end
+
   it "should assert wether a key exists or not" do
     Larimar.exists?("qwerty.mayonnaise").should eq true
   end

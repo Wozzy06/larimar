@@ -12,8 +12,14 @@ module Larimar
   # get a loaded property
   # raise an exception if the key is invalid
   def get(key : String) : String
-    keys = key.split '.'
     raise UnknownPropertyException.new unless (exists?(key))
+    DATA[key]
+  end
+
+  # get a loaded property or if not exist default
+  # raise an exception if the key is invalid
+  def get(key : String, default : String) : String
+    return default unless (exists?(key))
     DATA[key]
   end
 
