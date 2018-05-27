@@ -18,7 +18,7 @@ module Larimar
   end
 
   # delete a key
-  def delete(key : String)
+  def delete(key : String) : Void
     DATA.delete key
   end
 
@@ -27,7 +27,7 @@ module Larimar
     DATA.has_key? key
   end
 
-  def size
+  def size : Int32
     DATA.size
   end
 
