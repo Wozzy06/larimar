@@ -41,7 +41,7 @@ describe Larimar do
   end
 
   it "should raise an error when trying to fetch inexistant data (missing or mispelled)" do
-    expect_raises(Exception) do
+    expect_raises(Larimar::UnknownPropertyException) do
       Larimar.get("çanevapasmarcher")
     end
   end
