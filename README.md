@@ -16,6 +16,25 @@ dependencies:
 
 ```crystal
 require "larimar"
+
+
+# load properties from a file
+Larimar.load("path/to/your/property-file")
+
+# parse one line (String) and register its content in memory
+# does nothing on invalid entry
+Larimar.parse("your.property=value")
+
+# get a loaded property
+# raise an exception if the key is invalid
+Larimar.get(your.property)
+
+# delete all data
+Larimar.flush
+
+# retrieve the hash containing loaded data
+Larimar::Data
+
 ```
 
 ## Contributing
