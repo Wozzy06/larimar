@@ -27,7 +27,7 @@ Larimar.parse("your.property=value")
 
 # get a loaded property
 # raise an exception if the key is invalid
-Larimar.get(your.property)
+Larimar.get("your.property")
 
 # delete all data
 Larimar.flush
