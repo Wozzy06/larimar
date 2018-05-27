@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/Wozzy06/larimar">
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="js/doc.js"></script>
+  <title>Larimar - github.com/Wozzy06/larimar</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class=" current" data-id="github.com/Wozzy06/larimar/Larimar" data-name="larimar">
+      <a href="Larimar.html">Larimar</a>
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">module</span> Larimar
+
+</h1>
+
+
+
+
+
+  <h2>Overview</h2>
+
+  <p>Larimar is a property file reader
+version : 0.1.0
+author : Mead</p>
+
+
+
+
+
+
+
+  <h2>Extended Modules</h2>
+  <ul class="other-types-list">
+  
+    <li class="other-type"><a href="Larimar.html">Larimar</a></li>
+  
+  </ul>
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/Wozzy06/larimar/blob/31ecbc52feca8ad942444f973704382ef78b67b2/src/larimar/version.cr#L1" target="_blank">larimar/version.cr</a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/Wozzy06/larimar/blob/31ecbc52feca8ad942444f973704382ef78b67b2/src/larimar.cr#L6" target="_blank">larimar.cr</a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="DATA">
+        <strong>DATA</strong> = <code><span class="t">Hash</span>(<span class="t">String</span>, <span class="t">String</span>).<span class="k">new</span></code>
+      </dt>
+      
+    
+      <dt class="entry-const" id="VERSION">
+        <strong>VERSION</strong> = <code><span class="s">&quot;0.1.0&quot;</span></code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#flush%3AVoid-instance-method" class="signature"><strong>#flush</strong> : Void</a>
+        
+          <div class="summary"><p>delete all data</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get%28key%3AString%29%3AString-instance-method" class="signature"><strong>#get</strong>(key : String) : String</a>
+        
+          <div class="summary"><p>get a loaded property raise an exception if the key is invalid</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#load%28path%3AString%29%3AVoid-instance-method" class="signature"><strong>#load</strong>(path : String) : Void</a>
+        
+          <div class="summary"><p>load properties from a file</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#parse%28line%3AString%29%3AVoid-instance-method" class="signature"><strong>#parse</strong>(line : String) : Void</a>
+        
+          <div class="summary"><p>parse one line (String) and register its content in memory does nothing on invalid entry</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+</div>
+
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="flush:Void-instance-method">
+      <div class="signature">
+        
+        def <strong>flush</strong> : Void
+
+        <a class="method-permalink" href="#flush%3AVoid-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>delete all data</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Wozzy06/larimar/blob/31ecbc52feca8ad942444f973704382ef78b67b2/src/larimar.cr#L37" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get(key:String):String-instance-method">
+      <div class="signature">
+        
+        def <strong>get</strong>(key : String) : String
+
+        <a class="method-permalink" href="#get%28key%3AString%29%3AString-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>get a loaded property
+raise an exception if the key is invalid</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Wozzy06/larimar/blob/31ecbc52feca8ad942444f973704382ef78b67b2/src/larimar.cr#L13" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="load(path:String):Void-instance-method">
+      <div class="signature">
+        
+        def <strong>load</strong>(path : String) : Void
+
+        <a class="method-permalink" href="#load%28path%3AString%29%3AVoid-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>load properties from a file</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Wozzy06/larimar/blob/31ecbc52feca8ad942444f973704382ef78b67b2/src/larimar.cr#L20" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="parse(line:String):Void-instance-method">
+      <div class="signature">
+        
+        def <strong>parse</strong>(line : String) : Void
+
+        <a class="method-permalink" href="#parse%28line%3AString%29%3AVoid-instance-method">#</a>
+      </div>
+      
+        <div class="doc"><p>parse one line (String) and register its content in memory
+does nothing on invalid entry</p></div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Wozzy06/larimar/blob/31ecbc52feca8ad942444f973704382ef78b67b2/src/larimar.cr#L29" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
