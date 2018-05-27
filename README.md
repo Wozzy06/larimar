@@ -33,7 +33,7 @@ Larimar.get(your.property)
 Larimar.flush
 
 # retrieve the hash containing loaded data
-Larimar::Data
+Larimar::DATA
 
 ```
 
