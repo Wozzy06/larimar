@@ -16,14 +16,7 @@ dependencies:
 
 ```crystal
 require "larimar"
-
-
 ```
-
-
-## Development
-
-work in progress
 
 ## Contributing
 
