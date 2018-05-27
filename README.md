@@ -25,15 +25,22 @@ Larimar.load("path/to/your/property-file")
 # does nothing on invalid entry
 Larimar.parse("your.property=value")
 
+# get number of properties loaded
+n = Larimar.size
+
 # get a loaded property
 # raise an exception if the key is invalid
 Larimar.get("your.property")
 
+# assert existence of a key
+Larimar.exists("your.property")
+
+# delete a key
+Larimar.delete("your.property")
+
 # delete all data
 Larimar.flush
 
-# retrieve the hash containing loaded data
-Larimar::DATA
 
 ```
 

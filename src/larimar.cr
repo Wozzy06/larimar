@@ -6,14 +6,28 @@ require "./larimar/version.cr"
 module Larimar
   extend self
 
-  DATA = Hash(String, String).new
+  private DATA = Hash(String, String).new
 
   # get a loaded property
   # raise an exception if the key is invalid
   def get(key : String) : String
     keys = key.split('.')
-    raise Exception.new("no property registered") unless (DATA.has_key?(key))
+    raise Exception.new("no property registered") unless (exists?(key))
     DATA[key]
+  end
+
+  # delete a key
+  def delete(key : String)
+    DATA.delete(key)
+  end
+
+  # determine wether a key exists or not
+  def exists?(key : String) : Bool
+    DATA.has_key?(key)
+  end
+
+  def size
+    DATA.size
   end
 
   # load properties from a file
