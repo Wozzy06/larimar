@@ -33,6 +33,7 @@ if Larimar.exists("your.property")
   # get a loaded property
   # raise an exception if the key is invalid
   Larimar.get("your.property")
+end
 
 # get a loaded property
 # return default value if requested does not exist
