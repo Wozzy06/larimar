@@ -20,8 +20,28 @@
 
   <ul>
   
-  <li class=" " data-id="github.com/Wozzy06/larimar/Larimar" data-name="larimar">
+  <li class="parent " data-id="github.com/Wozzy06/larimar/Larimar" data-name="larimar">
       <a href="Larimar.html">Larimar</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/Wozzy06/larimar/Larimar/DataSet" data-name="larimar::dataset">
+      <a href="Larimar/DataSet.html">DataSet</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/Wozzy06/larimar/Larimar/Properties" data-name="larimar::properties">
+      <a href="Larimar/Properties.html">Properties</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/Wozzy06/larimar/Larimar/UnknownPropertyException" data-name="larimar::unknownpropertyexception">
+      <a href="Larimar/UnknownPropertyException.html">UnknownPropertyException</a>
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -44,11 +64,43 @@
 
 <h2>Usage</h2>
 
-<pre><code class='language-crystal'><span class="k">require</span> <span class="s">&quot;larimar&quot;</span></code></pre>
+<pre><code class='language-crystal'><span class="k">require</span> <span class="s">&quot;larimar&quot;</span>
+
+<span class="c"># create property file</span>
+properties <span class="o">=</span> <span class="t">Larimar</span><span class="t">::</span><span class="t">Properties</span>.<span class="k">new</span>
+
+<span class="c"># load properties from a file</span>
+properties.load(<span class="s">&quot;path/to/your/property-file&quot;</span>)
+
+<span class="c"># parse one line (String) and register its content in memory</span>
+<span class="c"># does nothing on invalid entry</span>
+properties.parse(<span class="s">&quot;your.property=value&quot;</span>)
+
+<span class="c"># get number of properties loaded</span>
+size <span class="o">=</span> properties.size
+
+<span class="c"># get a loaded property</span>
+<span class="c"># raise an exception if the key is invalid</span>
+properties.get(<span class="s">&quot;your.property&quot;</span>)
+
+<span class="c"># get a loaded property</span>
+<span class="c"># return default value if requested does not exist</span>
+properties.get(<span class="s">&quot;your.fake.property&quot;</span>, <span class="s">&quot;your default value&quot;</span>)
+
+<span class="c"># assert existence of a key</span>
+properties.exists(<span class="s">&quot;your.property&quot;</span>)
+
+<span class="c"># delete a key</span>
+properties.delete(<span class="s">&quot;your.property&quot;</span>)
+
+<span class="c"># delete all properties</span>
+properties.flush
+
+</code></pre>
 
 <h2>Contributing</h2>
 
-<ol><li>Fork it ( https://github.com/[your-github-name]/larimar/fork )</li><li>Create your feature branch (git checkout -b my-new-feature)</li><li>Commit your changes (git commit -am 'Add some feature')</li><li>Push to the branch (git push origin my-new-feature)</li><li>Create a new Pull Request</li></ol>
+<ol><li>Fork it ( https://github.com/Wozzy06/larimar/fork )</li><li>Create your feature branch (git checkout -b my-new-feature)</li><li>Commit your changes (git commit -am 'Add some feature')</li><li>Push to the branch (git push origin my-new-feature)</li><li>Create a new Pull Request</li></ol>
 
 <h2>Contributors</h2>
 

@@ -20,8 +20,28 @@
 
   <ul>
   
-  <li class=" current" data-id="github.com/Wozzy06/larimar/Larimar" data-name="larimar">
+  <li class="parent open current" data-id="github.com/Wozzy06/larimar/Larimar" data-name="larimar">
       <a href="Larimar.html">Larimar</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/Wozzy06/larimar/Larimar/DataSet" data-name="larimar::dataset">
+      <a href="Larimar/DataSet.html">DataSet</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/Wozzy06/larimar/Larimar/Properties" data-name="larimar::properties">
+      <a href="Larimar/Properties.html">Properties</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/Wozzy06/larimar/Larimar/UnknownPropertyException" data-name="larimar::unknownpropertyexception">
+      <a href="Larimar/UnknownPropertyException.html">UnknownPropertyException</a>
+      
+    </li>
+  
+</ul>
+
       
     </li>
   
@@ -42,8 +62,9 @@
 
   <h2>Overview</h2>
 
-  <p>Larimar is a property file reader
-version : 0.1.0
+  <p>Larimar is a property file reader</p>
+
+<p>since version 0.1.0
 author : Mead</p>
 
 
@@ -51,13 +72,6 @@ author : Mead</p>
 
 
 
-
-  <h2>Extended Modules</h2>
-  <ul class="other-types-list">
-  
-    <li class="other-type"><a href="Larimar.html">Larimar</a></li>
-  
-  </ul>
 
 
 
@@ -69,12 +83,22 @@ author : Mead</p>
   <h2>Defined in:</h2>
   
     
-      <a href="https://github.com/Wozzy06/larimar/blob/31ecbc52feca8ad942444f973704382ef78b67b2/src/larimar/version.cr#L1" target="_blank">larimar/version.cr</a>
+      <a href="https://github.com/Wozzy06/larimar/blob/bc443f8ffe632706c431db5a3cc7eb3188ab83df/src/larimar/version.cr#L3" target="_blank">larimar/version.cr</a>
     
     <br/>
   
     
-      <a href="https://github.com/Wozzy06/larimar/blob/31ecbc52feca8ad942444f973704382ef78b67b2/src/larimar.cr#L6" target="_blank">larimar.cr</a>
+      <a href="https://github.com/Wozzy06/larimar/blob/bc443f8ffe632706c431db5a3cc7eb3188ab83df/src/larimar/exception.cr#L1" target="_blank">larimar/exception.cr</a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/Wozzy06/larimar/blob/bc443f8ffe632706c431db5a3cc7eb3188ab83df/src/larimar/properties.cr#L3" target="_blank">larimar/properties.cr</a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/Wozzy06/larimar/blob/bc443f8ffe632706c431db5a3cc7eb3188ab83df/src/larimar.cr#L8" target="_blank">larimar.cr</a>
     
     <br/>
   
@@ -86,13 +110,8 @@ author : Mead</p>
   
   <dl>
     
-      <dt class="entry-const" id="DATA">
-        <strong>DATA</strong> = <code><span class="t">Hash</span>(<span class="t">String</span>, <span class="t">String</span>).<span class="k">new</span></code>
-      </dt>
-      
-    
       <dt class="entry-const" id="VERSION">
-        <strong>VERSION</strong> = <code><span class="s">&quot;0.1.0&quot;</span></code>
+        <strong>VERSION</strong> = <code><span class="s">&quot;0.1.1&quot;</span></code>
       </dt>
       
     
@@ -103,39 +122,6 @@ author : Mead</p>
 
 
 
-
-  <h2>Instance Method Summary</h2>
-  <ul class="list-summary">
-    
-      <li class="entry-summary">
-        <a href="#flush%3AVoid-instance-method" class="signature"><strong>#flush</strong> : Void</a>
-        
-          <div class="summary"><p>delete all data</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#get%28key%3AString%29%3AString-instance-method" class="signature"><strong>#get</strong>(key : String) : String</a>
-        
-          <div class="summary"><p>get a loaded property raise an exception if the key is invalid</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#load%28path%3AString%29%3AVoid-instance-method" class="signature"><strong>#load</strong>(path : String) : Void</a>
-        
-          <div class="summary"><p>load properties from a file</p></div>
-        
-      </li>
-    
-      <li class="entry-summary">
-        <a href="#parse%28line%3AString%29%3AVoid-instance-method" class="signature"><strong>#parse</strong>(line : String) : Void</a>
-        
-          <div class="summary"><p>parse one line (String) and register its content in memory does nothing on invalid entry</p></div>
-        
-      </li>
-    
-  </ul>
 
 
 
@@ -149,83 +135,6 @@ author : Mead</p>
 
 
 
-
-  <h2>Instance Method Detail</h2>
-  
-    <div class="entry-detail" id="flush:Void-instance-method">
-      <div class="signature">
-        
-        def <strong>flush</strong> : Void
-
-        <a class="method-permalink" href="#flush%3AVoid-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>delete all data</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/Wozzy06/larimar/blob/31ecbc52feca8ad942444f973704382ef78b67b2/src/larimar.cr#L37" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="get(key:String):String-instance-method">
-      <div class="signature">
-        
-        def <strong>get</strong>(key : String) : String
-
-        <a class="method-permalink" href="#get%28key%3AString%29%3AString-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>get a loaded property
-raise an exception if the key is invalid</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/Wozzy06/larimar/blob/31ecbc52feca8ad942444f973704382ef78b67b2/src/larimar.cr#L13" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="load(path:String):Void-instance-method">
-      <div class="signature">
-        
-        def <strong>load</strong>(path : String) : Void
-
-        <a class="method-permalink" href="#load%28path%3AString%29%3AVoid-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>load properties from a file</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/Wozzy06/larimar/blob/31ecbc52feca8ad942444f973704382ef78b67b2/src/larimar.cr#L20" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
-    <div class="entry-detail" id="parse(line:String):Void-instance-method">
-      <div class="signature">
-        
-        def <strong>parse</strong>(line : String) : Void
-
-        <a class="method-permalink" href="#parse%28line%3AString%29%3AVoid-instance-method">#</a>
-      </div>
-      
-        <div class="doc"><p>parse one line (String) and register its content in memory
-does nothing on invalid entry</p></div>
-      
-      <br/>
-      <div>
-        
-          [<a href="https://github.com/Wozzy06/larimar/blob/31ecbc52feca8ad942444f973704382ef78b67b2/src/larimar.cr#L29" target="_blank">View source</a>]
-        
-      </div>
-    </div>
-  
 
 
 

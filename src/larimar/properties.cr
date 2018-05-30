@@ -1,11 +1,12 @@
 require "./exception.cr"
 
-# Larimar is a property file reader
-# version : 0.1.0
-# author : Mead
 module Larimar
+  # Hash(String, String) alias
   alias DataSet = Hash(String, String)
 
+  # Properties struct instances hold data in a Hash(String, String) and can perform all CRUD operations.
+  # since version 0.1.1
+  # author : Mead
   struct Properties
     getter data
 
@@ -13,35 +14,36 @@ module Larimar
       @data = DataSet.new
     end
 
-    # get a loaded property
+    # get a loaded property from specified *key*
     # raise an exception if the key is invalid
     def get(key : String) : String
       raise UnknownPropertyException.new unless (exists?(key))
       @data[key]
     end
 
-    # get a loaded property or if not exist default
-    # raise an exception if the key is invalid
+    # get a loaded property from specified *key*
+    # or if not exist *default*
     def get(key : String, default : String) : String
       return default unless (exists?(key))
       @data[key]
     end
 
-    # delete a key
+    # delete a *key*
     def delete(key : String) : Void
       @data.delete key
     end
 
-    # determine wether a key exists or not
+    # determine wether a *key* exists or not
     def exists?(key : String) : Bool
       @data.has_key? key
     end
 
+    # get number of properties
     def size : Int32
       @data.size
     end
 
-    # load properties from a file
+    # load properties from a *path* file
     def load(path : String) : Void
       lines = File.read_lines path
       lines.each do |line|
@@ -49,7 +51,7 @@ module Larimar
       end
     end
 
-    # parse one line (String) and register its content in memory
+    # parse one *line* (String) and register its content in memory
     # does nothing on invalid entry
     def parse(line : String) : Void
       sides = line.split '=', 2
