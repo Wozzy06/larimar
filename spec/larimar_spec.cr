@@ -1,53 +1,56 @@
 require "./spec_helper"
 
 describe Larimar do
+
+  props = Larimar::Properties.new
+
   it "should add a well parsed line and fetch data in memory" do
-    Larimar.parse("test=hello")
-    Larimar.parse("test.azerty=world")
-    Larimar.parse("qwerty.mayonnaise=cornichon")
-    Larimar.size.should eq 3
-    Larimar.get("test").should eq "hello"
-    Larimar.get("test.azerty").should eq "world"
-    Larimar.get("qwerty.mayonnaise").should eq "cornichon"
+    props.parse("test=hello")
+    props.parse("test.azerty=world")
+    props.parse("qwerty.mayonnaise=cornichon")
+    props.size.should eq 3
+    props.get("test").should eq "hello"
+    props.get("test.azerty").should eq "world"
+    props.get("qwerty.mayonnaise").should eq "cornichon"
   end
 
   it "should fetch data in memory or if not exist default value" do
-    Larimar.get("test").should eq "hello"
-    Larimar.get("blahblah","abcde").should eq "abcde"
+    props.get("test").should eq "hello"
+    props.get("blahblah", "abcde").should eq "abcde"
   end
 
   it "should assert wether a key exists or not" do
-    Larimar.exists?("qwerty.mayonnaise").should eq true
+    props.exists?("qwerty.mayonnaise").should eq true
   end
 
   it "should delete an existing key" do
-    Larimar.delete("qwerty.mayonnaise")
-    Larimar.size.should eq 2
+    props.delete("qwerty.mayonnaise")
+    props.size.should eq 2
   end
 
   it "should reset data in memory" do
-    Larimar.flush
-    Larimar.size.should eq 0
+    props.flush
+    props.size.should eq 0
   end
 
   it "should not do anything when the line is wrong or commented" do
-    Larimar.parse("dejdeldeev")
-    Larimar.parse("=1rdjnf")
-    Larimar.parse("#ceci.est.un.commentaire=this is a comment")
-    Larimar.size.should eq 0
+    props.parse("dejdeldeev")
+    props.parse("=1rdjnf")
+    props.parse("#ceci.est.un.commentaire=this is a comment")
+    props.size.should eq 0
 
-    Larimar.flush
+    props.flush
   end
 
   it "should read and load a file and skip wrong/commented line" do
-    Larimar.load("./spec/test.properties")
-    Larimar.size.should eq 4
-    Larimar.flush
+    props.load("./spec/test.properties")
+    props.size.should eq 4
+    props.flush
   end
 
   it "should raise an error when trying to fetch inexistant data (missing or mispelled)" do
     expect_raises(Larimar::UnknownPropertyException) do
-      Larimar.get("çanevapasmarcher")
+      props.get("çanevapasmarcher")
     end
   end
 end

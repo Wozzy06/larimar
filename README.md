@@ -17,33 +17,35 @@ dependencies:
 ```crystal
 require "larimar"
 
+# create property file
+properties = Larimar::Properties.new
 
 # load properties from a file
-Larimar.load("path/to/your/property-file")
+properties.load("path/to/your/property-file")
 
 # parse one line (String) and register its content in memory
 # does nothing on invalid entry
-Larimar.parse("your.property=value")
+properties.parse("your.property=value")
 
 # get number of properties loaded
-n = Larimar.size
+size = properties.size
 
 # get a loaded property
 # raise an exception if the key is invalid
-Larimar.get("your.property")
+properties.get("your.property")
 
 # get a loaded property
 # return default value if requested does not exist
-Larimar.get("your.fake.property", "your default value")
+properties.get("your.fake.property", "your default value")
 
 # assert existence of a key
-Larimar.exists("your.property")
+properties.exists("your.property")
 
 # delete a key
-Larimar.delete("your.property")
+properties.delete("your.property")
 
-# delete all data
-Larimar.flush
+# delete all properties
+properties.flush
 
 
 ```
