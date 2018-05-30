@@ -5,5 +5,4 @@ require "./larimar/properties.cr"
 # version : 0.1.0
 # author : Mead
 module Larimar
-  extend self
 end
