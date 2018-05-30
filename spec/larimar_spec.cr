@@ -1,7 +1,6 @@
 require "./spec_helper"
 
 describe Larimar do
-
   props = Larimar::Properties.new
 
   it "should add a well parsed line and fetch data in memory" do
