@@ -32,7 +32,7 @@ size = properties.size
 
 
 # assert existence of a key
-if properties.exists("your.property")
+if properties.exists?("your.property")
   # get a loaded property
   # raise an exception if the key is invalid
   properties.get("your.property")
