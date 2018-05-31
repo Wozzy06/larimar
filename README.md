@@ -30,16 +30,17 @@ properties.parse("your.property=value")
 # get number of properties loaded
 size = properties.size
 
-# get a loaded property
-# raise an exception if the key is invalid
-properties.get("your.property")
+
+# assert existence of a key
+if Larimar.exists("your.property")
+  # get a loaded property
+  # raise an exception if the key is invalid
+  properties.get("your.property")
+end
 
 # get a loaded property
 # return default value if requested does not exist
 properties.get("your.fake.property", "your default value")
-
-# assert existence of a key
-properties.exists("your.property")
 
 # delete a key
 properties.delete("your.property")
