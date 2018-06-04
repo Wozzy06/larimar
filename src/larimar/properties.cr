@@ -4,11 +4,11 @@ module Larimar
   # Hash(String, String) alias
   alias DataSet = Hash(String, String)
 
-  # Properties struct instances hold data in a Hash(String, String) and can perform all CRUD operations.
+  # Properties class instances hold data in a Hash(String, String) and can perform all CRUD operations.
   #
   # since version 0.1.1
   # author : Mead
-  struct Properties
+  class Properties
     getter data
 
     def initialize
