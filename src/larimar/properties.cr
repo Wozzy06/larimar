@@ -9,7 +9,7 @@ module Larimar
   # since version 0.1.1
   # author : Mead
   class Properties
-    getter data
+    getter data : DataSet
 
     def initialize
       @data = DataSet.new
